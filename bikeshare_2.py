@@ -284,26 +284,30 @@ def display_data(df):
     print('-' * 40)
 
 
+def restart_program():
+    """Checks if the user wants to restart the program and prompts accordingly."""
+    restart = input("\nWould you like to restart program? Enter yes or no.\n").lower()
+    while restart not in ['yes', 'no']:
+        print('you entered a wrong input, type "Yes" to continue or "No" to quit Program')
+        restart = input("\nWould you like to restart program? Enter yes or no.\n").lower()
+    if restart == 'yes':
+        return True
+    else:
+        design_pat(5, 'Thank you for your time')
+        return False
+
+
 def main():
-    while True:
-        city, month, day = get_filters()
-        df = load_data(city, month, day)
-
-        time_stats(df)
-        station_stats(df)
-        trip_duration_stats(df)
-        user_stats(df)
-        display_data(df)
-
-        while True:
-            restart = input('\nWould you like to restart program? Enter yes or no.\n')
-            if restart.lower() not in ['yes', 'no']:
-                print('you entered a wrong input, type "Yes" to continue or "No" to quit Program')
-            else:
-                break
-        if restart.lower() == 'no':
-            design_pat(5, 'Thank you for your time')
-            break
+    city, month, day = get_filters()
+    df = load_data(city, month, day)
+    time_stats(df)
+    station_stats(df)
+    trip_duration_stats(df)
+    user_stats(df)
+    display_data(df)
+    should_restart = restart_program()
+    if should_restart:
+        main()
 
 
 if __name__ == "__main__":
