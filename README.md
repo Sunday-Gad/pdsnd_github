@@ -32,3 +32,14 @@ To run the project, you will need to have Python installed. Once you have Python
 `python bikeshare.py`
 
 This will start the interactive experience in the terminal. You can then enter your questions about the data and the script will answer them.
+
+To use the project, you will need to have some basic knowledge of Python. The project is designed to be interactive, so you can get specific information according to month, day of week, month and day, or none from the data. For example, you could ask the following questions:
+
+* What is the most popular start station used on specific day of week?
+* What is the average trip duration in a specific moth?
+* What is the most popular day of the week for bike rides?
+The script will also print out some descriptive statistics about the data.
+
+### Credits
+
+This project was inspired by the Udacity Data Science Nanodegree program. The data for this project was provided by Motivate.
