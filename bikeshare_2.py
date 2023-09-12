@@ -9,19 +9,13 @@ CITY_DATA = {'chicago': 'chicago.csv',
 
 
 def design_pat(row, text):
-    """Displays pattern design for selection"""
-    for i in range(0, row):
-        # This inner loop will print the stars
-        for j in range(0, i + 1):
-            print("*", end=' ')
-            # Change line after each iteration
-        print(" ")
+    """Prints a pattern of stars with a given number of rows and a text message."""
+    stars = "*"
+    for i in range(row):
+        print(stars * (i + 1))
     print(text)
-    # For second pattern
-    for i in range(row + 1, 0, -1):
-        for j in range(0, i - 1):
-            print("*", end=' ')
-        print(" ")
+    for i in range(row, 0, -1):
+        print(stars * i)
 
 
 def get_filters():
