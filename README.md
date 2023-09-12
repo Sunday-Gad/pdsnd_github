@@ -1,17 +1,19 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
 
 ### Date created
-Include the date you created this project and README file.
+2023-09-12
 
-### Project Title
-Replace the Project Title
+### Exploring US Bikeshare Data with Python
 
 ### Description
-Describe what your project is about and what it does
+
+This project uses Python to explore data related to bike share systems for three major cities in the United States-Chicago, New York City, and Washington. The data was collected by Motivate, a bike share company that operates bike share systems in over 50 cities around the world.
+
 
 ### Files used
-Include the files used
+* [bikeshare.py](https://github.com/Sunday-Gad/pdsnd_github/blob/master/bikeshare_2.py) : This is the main Python script that imports the data, answers interesting questions about it, and creates an interactive experience in the terminal to present these statistics.
 
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+* chicago.csv : This file contains bike share data for Chicago.
 
+* new_york_city.csv : This file contains bike share data for New York City.
+
+* washington.csv: This file contains bike share data for Washington.
