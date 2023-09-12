@@ -9,19 +9,13 @@ CITY_DATA = {'chicago': 'chicago.csv',
 
 
 def design_pat(row, text):
-    """Displays pattern design for selection"""
-    for i in range(0, row):
-        # This inner loop will print the stars
-        for j in range(0, i + 1):
-            print("*", end=' ')
-            # Change line after each iteration
-        print(" ")
+    """Prints a pattern of stars with a given number of rows and a text message."""
+    stars = "*"
+    for i in range(row):
+        print(stars * (i + 1))
     print(text)
-    # For second pattern
-    for i in range(row + 1, 0, -1):
-        for j in range(0, i - 1):
-            print("*", end=' ')
-        print(" ")
+    for i in range(row, 0, -1):
+        print(stars * i)
 
 
 def get_filters():
@@ -290,26 +284,30 @@ def display_data(df):
     print('-' * 40)
 
 
+def restart_program():
+    """Checks if the user wants to restart the program and prompts accordingly."""
+    restart = input("\nWould you like to restart program? Enter yes or no.\n").lower()
+    while restart not in ['yes', 'no']:
+        print('you entered a wrong input, type "Yes" to continue or "No" to quit Program')
+        restart = input("\nWould you like to restart program? Enter yes or no.\n").lower()
+    if restart == 'yes':
+        return True
+    else:
+        design_pat(5, 'Thank you for your time')
+        return False
+
+
 def main():
-    while True:
-        city, month, day = get_filters()
-        df = load_data(city, month, day)
-
-        time_stats(df)
-        station_stats(df)
-        trip_duration_stats(df)
-        user_stats(df)
-        display_data(df)
-
-        while True:
-            restart = input('\nWould you like to restart program? Enter yes or no.\n')
-            if restart.lower() not in ['yes', 'no']:
-                print('you entered a wrong input, type "Yes" to continue or "No" to quit Program')
-            else:
-                break
-        if restart.lower() == 'no':
-            design_pat(5, 'Thank you for your time')
-            break
+    city, month, day = get_filters()
+    df = load_data(city, month, day)
+    time_stats(df)
+    station_stats(df)
+    trip_duration_stats(df)
+    user_stats(df)
+    display_data(df)
+    should_restart = restart_program()
+    if should_restart:
+        main()
 
 
 if __name__ == "__main__":
